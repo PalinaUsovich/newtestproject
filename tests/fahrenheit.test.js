@@ -3,26 +3,27 @@ const fahrenheitToCelsius = require('../scripts/fahrenheit');
 
 describe ('Fahrenheit to Celsius Test', function (){
     it('should perform standart temperature converting', function (){
-        let tempInFahrenheit = 70;
-        let expectedTempInCelsius = 21;
-        let returnedTempInCelsius = fahrenheitToCelsius(tempInFahrenheit);
+        
         assert.equal(
-            returnedTempInCelsius,
-            expectedTempInCelsius,
-            `${tempInFahrenheit} F is not ${returnedTempInCelsius} C`
+            fahrenheitToCelsius(50),
+            10,
+            'Function returned invalid temperature value'
         );
+     });
 
 
-    });
     it ('test  negative temperature', function () {
-        let tempInFahrenheit = 10;
-        let expectedTempInCelsius = -12;
-        let returnedTempInCelsius = fahrenheitToCelsius(tempInFahrenheit);
+        
         assert.equal(
-            returnedTempInCelsius,
-            expectedTempInCelsius,
-            `${tempInFahrenheit} F is not ${returnedTempInCelsius} C`
+            fahrenheitToCelsius(10),
+           -12,
+            'Does not return negative value'
+
         );
+
+    })
+    it('fahrenheitToCelsius returns invalid conver with non-number attribute',function (){
+        assert.deepEqual(fahrenheitToCelsius('seven') , NaN);
     })
         
 });
