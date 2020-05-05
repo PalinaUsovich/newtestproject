@@ -27,6 +27,7 @@ function calculateStudentGrade (score,totalPossibleSCore) {
     }else{
         console.log(`Invalid number`)
     }
+    return {grade: grade, scorePercentage: scorePercentage};
     
 
 }
